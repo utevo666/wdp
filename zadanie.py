@@ -106,3 +106,34 @@ lista2 = [3, 2]
 
 wynik = czy_zawiera(lista1, lista2)
 print(wynik)
+
+
+
+def ile_ujemnych(lista):
+    count = 0
+    for element in lista:
+        if element < 0:
+            count += 1
+    return count
+
+lista = [-1,-2,-5,-6,1,2,5]
+print(f"liczba ujemnych elementow: {ile_ujemnych(lista)}")
+
+def czy_nalezy(lista, element):
+    return element in lista
+
+moja_lista = [5, 3, 1, 4, 2]
+element_do_sprawdzenia = 4
+
+wynik = czy_nalezy(moja_lista, element_do_sprawdzenia)
+print(wynik)
+
+def czy_zawiera(lista1, lista2):
+    return all(element in lista1 for element in lista2)
+
+
+lista1 = [5, 3, 1, 4]
+lista2 = [3, 2]
+
+wynik = czy_zawiera(lista1, lista2)
+print(wynik)
