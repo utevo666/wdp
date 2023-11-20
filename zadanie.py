@@ -115,3 +115,27 @@ def remove(napis, usuwany):
     print(napis.replace(usuwany,"",1))
 
 remove(napis,usuwany)
+
+def dzielniki(liczba):
+    wynik = []
+    for i in range(1,int(liczba / 2 + 1)):
+        if liczba % i == 0:
+            wynik.append(i)
+    return wynik
+
+print(dzielniki(50))
+
+def suma(lista):
+    wynik = 0
+    for liczba in lista:
+        wynik += liczba
+    return wynik
+print(suma([1,2,3,4,5]))
+
+
+def czy_doskonala(liczba):
+    dz = dzielniki(liczba)
+    su = suma(dz)
+    return su == liczba
+
+print(czy_doskonala(100))
