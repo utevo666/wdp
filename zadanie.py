@@ -139,3 +139,49 @@ def czy_doskonala(liczba):
     return su == liczba
 
 print(czy_doskonala(100))
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def find_coprimes(n):
+    coprimes = [i for i in range(1, n) if gcd(n, i) == 1]
+    return coprimes
+
+n = int(input("Podaj liczbę naturalną n: "))
+result = find_coprimes(n)
+print(f"Liczby mniejsze od {n} względnie pierwsze z {n}: {result}")
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def prime_divisors(n):
+    divisors = [i for i in range(1, n + 1) if n % i == 0 and is_prime(i)]
+    return divisors
+
+n = int(input("Podaj liczbę naturalną n: "))
+result = prime_divisors(n)
+print(f"Podzielniki liczby {n} będące liczbami pierwszymi: {result}")
+
+def find_max_fibonacci_less_than_n(n):
+    fib_sequence = [0, 1]
+    while fib_sequence[-1] < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    
+    if fib_sequence[-1] > n:
+        fib_sequence.pop()  # Usuwamy ostatni element, który przekroczył n
+    
+    max_fibonacci = max(fib_sequence)
+    return max_fibonacci
+
+n = int(input("Podaj liczbę naturalną n: "))
+result = find_max_fibonacci_less_than_n(n)
+print(f"Największa liczba w ciągu Fibonacciego mniejsza od {n}: {result}")
+
+
