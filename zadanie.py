@@ -204,7 +204,22 @@ def czestosc(lista):
         else:
             wynik[e] += 1
     return wynik
+    
+def slownik(d):
+    wynik = {}
+    for k in d:
+        if k >= 'a' and k <= 'z':
+            wynik[k] = d[k]
+        if k >= 'A' and k <= 'Z':
+            wynik[k] = d[k]
+    return wynik
 
+def min(d):
+    key_min = next(iter(d))
+    for item in d:
+        if d[item] < d[key_min]:
+            key_min = item
+    return key_min
  
 print (czestosc(lista))
 print (unikalne(lista))
