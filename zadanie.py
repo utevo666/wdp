@@ -184,7 +184,10 @@ n = int(input("Podaj liczbę naturalną n: "))
 result = find_max_fibonacci_less_than_n(n)
 print(f"Największa liczba w ciągu Fibonacciego mniejsza od {n}: {result}")
 lista = [8,5,8,2,5,3,8,7]
-wynik = [8,5,2,3,7]
+wynik = []
+
+lista = [8,5,8,2,5,3,8,7]
+wynik = []
 
 def unikalne(lista):
     wynik = []
@@ -200,6 +203,9 @@ def czestosc(lista):
             wynik[e] = 1
         else:
             wynik[e] += 1
+    return wynik
 
-
+ 
+print (czestosc(lista))
+print (unikalne(lista))
 
