@@ -245,3 +245,35 @@ def program(sciezka):
 
 print(program('pyui.py'))
 
+
+
+def jednaduzalitera(str):
+    for i in str:
+        if i >= "A" and i<= "Z":
+            return True
+    return False
+
+def jednacyfra(str):
+    for x in str:
+        if czyliczba(x):
+            return True
+    return False
+
+
+def czyliczba(x):
+    if x >= "a" and x <= "z" or x>= "A" and x<="Z":
+        return False
+    else:
+        return True
+
+while True:
+    haslo = input("Podaj hasło: ")
+    if jednaduzalitera(haslo) and jednacyfra(haslo):
+        print(f"Hasło ustanowione pomyślnie jako: ", haslo)
+        break
+    elif jednaduzalitera(haslo) == False:
+        print("Hasło musi zawierać co najmniej jedną dużą literę!!!")
+        continue
+    else:
+        print("Hasło musi zawierać co najmniej jedną liczbę!!!")
+        continue
