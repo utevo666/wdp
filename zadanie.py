@@ -224,3 +224,24 @@ def min(d):
 print (czestosc(lista))
 print (unikalne(lista))
 
+# -34
+def program(sciezka):
+    slownik = {}
+    with open(sciezka, "r") as plik:
+        for linia in plik:
+            elementy = linia.split()
+            for element in elementy:
+                try:
+                    liczba = int(element)
+                    if liczba in slownik:
+                        slownik[liczba] += 1
+                    else:
+                        slownik[liczba] = 1
+                except:
+                    pass
+    return slownik
+
+
+
+print(program('pyui.py'))
+
